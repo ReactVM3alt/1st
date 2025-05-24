@@ -1,0 +1,70 @@
+<div>
+    <fieldset>
+        <legend>Lorem Ipsum Configuration</legend>
+        
+        <label for="lorem-paragraphs">Number of Paragraphs:</label>
+        <input type="number" id="lorem-paragraphs" value="5" min="1">
+
+        <label for="lorem-sentences">Average Sentences per Paragraph:</label>
+        <input type="number" id="lorem-sentences" value="5" min="1">
+
+        <label for="lorem-words">Average Words per Sentence:</label>
+        <input type="number" id="lorem-words" value="10" min="1">
+
+        <div style="margin-top: 10px; margin-bottom: 10px;">
+            <input type="checkbox" id="lorem-start-standard" checked>
+            <label for="lorem-start-standard">Start with "Lorem ipsum dolor sit amet..."</label>
+        </div>
+
+        <button id="lorem-btn-generate">Generate</button>
+    </fieldset>
+
+    <fieldset style="margin-top: 20px;">
+        <legend>Generated Text</legend>
+        <textarea id="lorem-output" rows="15" readonly placeholder="Generated Lorem Ipsum text will appear here..."></textarea>
+        
+        <div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+            <button id="lorem-btn-copy">Copy to Clipboard</button>
+            <div id="lorem-stats" style="font-size: 0.9em; color: var(--text-color);">
+                Words: <span id="lorem-word-count">0</span> | Characters: <span id="lorem-char-count">0</span>
+            </div>
+        </div>
+    </fieldset>
+
+    <div id="lorem-error-message" class="error-message" style="margin-top: 15px; display: none;">
+        <!-- Error messages will be displayed here -->
+    </div>
+</div>
+
+<style>
+    fieldset {
+        border: 1px solid var(--text-color);
+        border-radius: 6px;
+        padding: 1em;
+        margin-bottom: 1em;
+    }
+    legend {
+        font-weight: bold;
+        padding: 0 0.5em;
+        color: var(--text-color);
+    }
+    input[type="number"], input[type="checkbox"] {
+        margin-bottom: 0.8em;
+    }
+    label {
+        display: block; /* Make labels take full width for better spacing */
+        margin-bottom: 0.2em;
+    }
+    input[type="checkbox"] + label {
+        display: inline-block; /* For checkbox label */
+        margin-left: 5px;
+    }
+    .error-message { 
+        padding: 0.7em;
+        border-radius: 4px;
+        font-size: 0.9em;
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+    }
+</style>

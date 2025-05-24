@@ -1,0 +1,90 @@
+<div>
+    <fieldset>
+        <legend>Regular Expression</legend>
+        <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+            <div style="flex-grow: 1;">
+                <label for="regex-pattern">Pattern:</label>
+                <input type="text" id="regex-pattern" placeholder="Enter your regex pattern here (e.g., \b\w+\b)">
+            </div>
+            <div>
+                <label for="regex-flags">Flags:</label>
+                <input type="text" id="regex-flags" placeholder="e.g., gi" style="width: 80px;">
+            </div>
+        </div>
+        <div id="regex-error-message" class="error-message" style="display: none; margin-bottom: 10px;">
+            <!-- Regex validation errors will be displayed here -->
+        </div>
+    </fieldset>
+
+    <fieldset style="margin-top: 15px;">
+        <legend>Test String</legend>
+        <textarea id="regex-test-string" rows="8" placeholder="Enter the string to test against..."></textarea>
+    </fieldset>
+
+    <fieldset style="margin-top: 15px;">
+        <legend>Results</legend>
+        <div style="margin-bottom: 10px;">
+            <strong>Match Count:</strong> <span id="regex-match-count">0</span>
+        </div>
+        
+        <label>Highlighted Matches in Test String:</label>
+        <div id="regex-highlighted-output" 
+             class="highlighted-text-area" 
+             style="white-space: pre-wrap; 
+                    border: 1px solid var(--text-color); 
+                    padding: 0.5em; 
+                    min-height: 80px; 
+                    background-color: var(--background-color); 
+                    color: var(--text-color);
+                    overflow-x: auto;
+                    font-family: monospace;">
+            <!-- Test string with highlighted matches will appear here -->
+        </div>
+
+        <label style="margin-top:15px;">Match Details:</label>
+        <div id="regex-match-list" style="max-height: 200px; overflow-y: auto; border: 1px solid var(--text-color); padding: 0.5em; background-color: var(--background-color);">
+            <!-- Detailed list of matches and groups will appear here -->
+            <p>No matches yet.</p>
+        </div>
+    </fieldset>
+</div>
+
+<style>
+    .error-message { 
+        padding: 0.7em;
+        border-radius: 4px;
+        font-size: 0.9em;
+        background-color: #f8d7da; /* Light red */
+        color: #721c24; /* Dark red */
+        border: 1px solid #f5c6cb;
+    }
+    .highlighted-text-area {
+        line-height: 1.5;
+    }
+    .regex-match {
+        background-color: #ffd700; /* Gold for highlighting */
+        color: #000; /* Black text on gold for contrast */
+        border-radius: 3px;
+        padding: 0.1em 0.2em;
+        font-weight: bold;
+    }
+    body.dark-theme .regex-match {
+        background-color: #b8860b; /* DarkGoldenRod for dark theme */
+        color: #fff;
+    }
+    #regex-match-list ul {
+        padding-left: 20px;
+        margin: 0;
+    }
+    #regex-match-list li {
+        margin-bottom: 8px;
+        border-bottom: 1px dashed var(--text-color);
+        padding-bottom: 5px;
+    }
+    #regex-match-list code { /* Style for matched text and groups */
+        background-color: var(--nav-bg); /* Use a theme variable for background */
+        padding: 2px 4px;
+        border-radius: 3px;
+        font-family: monospace;
+    }
+</style>

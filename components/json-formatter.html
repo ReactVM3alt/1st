@@ -1,0 +1,47 @@
+<div>
+    <label for="json-input">Input JSON:</label>
+    <textarea id="json-input" rows="10" placeholder="Paste your JSON string here..."></textarea>
+
+    <div class="tool-actions">
+        <button id="json-btn-beautify">Beautify</button>
+        <button id="json-btn-minify">Minify</button>
+        <button id="json-btn-validate">Validate</button>
+    </div>
+
+    <label for="json-output">Output JSON:</label>
+    <textarea id="json-output" rows="10" readonly placeholder="Formatted JSON will appear here..."></textarea>
+    
+    <button id="json-btn-copy">Copy to Clipboard</button>
+
+    <div id="json-validation-message" class="validation-message" style="margin-top: 10px;">
+        <!-- Validation messages will be displayed here -->
+    </div>
+</div>
+
+<style>
+    .tool-actions {
+        margin-top: 0.5em;
+        margin-bottom: 1em;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+    }
+    .tool-actions button {
+        flex-grow: 1;
+    }
+    .validation-message {
+        padding: 0.7em;
+        border-radius: 4px;
+        font-size: 0.9em;
+    }
+    .validation-message.success {
+        background-color: #d4edda; /* Light green */
+        color: #155724; /* Dark green */
+        border: 1px solid #c3e6cb;
+    }
+    .validation-message.error {
+        background-color: #f8d7da; /* Light red */
+        color: #721c24; /* Dark red */
+        border: 1px solid #f5c6cb;
+    }
+</style>

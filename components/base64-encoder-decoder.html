@@ -1,0 +1,39 @@
+<div>
+    <label for="base64-input">Input Text:</label>
+    <textarea id="base64-input" rows="8" placeholder="Enter text to encode or Base64 string to decode..."></textarea>
+
+    <div class="tool-actions">
+        <button id="base64-btn-encode">Encode to Base64</button>
+        <button id="base64-btn-decode">Decode from Base64</button>
+    </div>
+
+    <label for="base64-output">Output:</label>
+    <textarea id="base64-output" rows="8" readonly placeholder="Result will appear here..."></textarea>
+    
+    <button id="base64-btn-copy">Copy to Clipboard</button>
+
+    <div id="base64-error-message" class="error-message" style="margin-top: 10px; color: red; display: none;">
+        <!-- Error messages will be displayed here -->
+    </div>
+</div>
+
+<style>
+    .tool-actions {
+        margin-top: 0.5em;
+        margin-bottom: 1em;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+    }
+    .tool-actions button {
+        flex-grow: 1;
+    }
+    .error-message { /* Already styled globally, but can add specifics if needed */
+        padding: 0.7em;
+        border-radius: 4px;
+        font-size: 0.9em;
+        background-color: #f8d7da; /* Light red */
+        color: #721c24; /* Dark red */
+        border: 1px solid #f5c6cb;
+    }
+</style>

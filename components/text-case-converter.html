@@ -1,0 +1,29 @@
+<div>
+    <label for="text-case-input">Input Text:</label>
+    <textarea id="text-case-input" rows="6" placeholder="Enter text here..."></textarea>
+
+    <div class="tool-actions">
+        <button id="text-case-btn-uppercase">UPPERCASE</button>
+        <button id="text-case-btn-lowercase">lowercase</button>
+        <button id="text-case-btn-titlecase">Title Case</button>
+        <button id="text-case-btn-sentencecase">Sentence case</button>
+    </div>
+
+    <label for="text-case-output">Output Text:</label>
+    <textarea id="text-case-output" rows="6" readonly placeholder="Converted text will appear here..."></textarea>
+
+    <button id="text-case-btn-copy">Copy to Clipboard</button>
+</div>
+
+<style>
+    /* Add some spacing for the buttons */
+    .tool-actions {
+        margin-bottom: 1em;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+    }
+    .tool-actions button {
+        flex-grow: 1; /* Allow buttons to grow and fill space */
+    }
+</style>

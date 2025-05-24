@@ -1,0 +1,91 @@
+<div>
+    <!-- Timestamp to Date -->
+    <fieldset>
+        <legend>Unix Timestamp to Readable Date</legend>
+        <label for="timestamp-input-ts">Unix Timestamp (seconds):</label>
+        <input type="number" id="timestamp-input-ts" placeholder="e.g., 1678886400">
+        <button id="timestamp-btn-to-date">Convert to Date</button>
+        <button id="timestamp-btn-current-to-date">Use Current Timestamp</button>
+        
+        <label for="timestamp-output-date-local">Readable Date (Local):</label>
+        <input type="text" id="timestamp-output-date-local" readonly placeholder="Local date will appear here...">
+        <button id="timestamp-btn-copy-date-local">Copy Local</button>
+
+        <label for="timestamp-output-date-utc">Readable Date (UTC):</label>
+        <input type="text" id="timestamp-output-date-utc" readonly placeholder="UTC date will appear here...">
+        <button id="timestamp-btn-copy-date-utc">Copy UTC</button>
+    </fieldset>
+
+    <!-- Date to Timestamp -->
+    <fieldset style="margin-top: 20px;">
+        <legend>Readable Date to Unix Timestamp</legend>
+        <div class="date-time-inputs">
+            <label for="timestamp-input-year">Year:</label>
+            <input type="number" id="timestamp-input-year" placeholder="YYYY" min="1970">
+            <label for="timestamp-input-month">Month (1-12):</label>
+            <input type="number" id="timestamp-input-month" placeholder="MM" min="1" max="12">
+            <label for="timestamp-input-day">Day (1-31):</label>
+            <input type="number" id="timestamp-input-day" placeholder="DD" min="1" max="31">
+            <label for="timestamp-input-hour">Hour (0-23):</label>
+            <input type="number" id="timestamp-input-hour" placeholder="HH" min="0" max="23" value="0">
+            <label for="timestamp-input-minute">Minute (0-59):</label>
+            <input type="number" id="timestamp-input-minute" placeholder="MM" min="0" max="59" value="0">
+            <label for="timestamp-input-second">Second (0-59):</label>
+            <input type="number" id="timestamp-input-second" placeholder="SS" min="0" max="59" value="0">
+        </div>
+        <button id="timestamp-btn-to-ts">Convert to Timestamp</button>
+        <button id="timestamp-btn-current-to-ts-fields">Use Current Date/Time</button>
+
+        <label for="timestamp-output-ts">Unix Timestamp (seconds):</label>
+        <input type="text" id="timestamp-output-ts" readonly placeholder="Unix timestamp will appear here...">
+        <button id="timestamp-btn-copy-ts">Copy Timestamp</button>
+    </fieldset>
+
+    <div id="timestamp-error-message" class="error-message" style="margin-top: 15px; display: none;">
+        <!-- Error messages will be displayed here -->
+    </div>
+</div>
+
+<style>
+    fieldset {
+        border: 1px solid var(--text-color); /* Use CSS variable for border color */
+        border-radius: 6px;
+        padding: 1em;
+        margin-bottom: 1em;
+    }
+    legend {
+        font-weight: bold;
+        padding: 0 0.5em;
+        color: var(--text-color); /* Use CSS variable */
+    }
+    .date-time-inputs {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 0.5em 1em;
+        margin-bottom: 1em;
+    }
+    .date-time-inputs label {
+        font-size: 0.9em;
+        margin-bottom: 0.2em;
+    }
+    .date-time-inputs input {
+        width: calc(100% - 16px); /* Adjust for padding */
+    }
+    /* Ensure buttons next to inputs are vertically aligned and have some space */
+    input[type="text"] + button, input[type="number"] + button {
+        margin-left: 5px;
+        vertical-align: middle; /* Adjust alignment if needed */
+    }
+     /* General button styling within the tool */
+    button {
+        margin-top: 5px; /* Add some space above buttons if they wrap */
+    }
+    .error-message { 
+        padding: 0.7em;
+        border-radius: 4px;
+        font-size: 0.9em;
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+    }
+</style>
